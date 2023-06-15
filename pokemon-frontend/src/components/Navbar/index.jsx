@@ -8,8 +8,9 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import PokemonLogo from './Imagens/LogoPokemon.png'
 import { Avatar, Button, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const settings = ['Perfil', 'Conta', 'Sair'];
+const settings = ['Perfil', 'Sair'];
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -59,7 +60,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar({ pokemonFiltro, esconderPesquisa }) {
-
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -84,16 +84,16 @@ export default function Navbar({ pokemonFiltro, esconderPesquisa }) {
             <AppBar position="static" sx={{ backgroundColor: 'black' }}>
                 <Toolbar>
                     <Box className='navbar-conteudo'>
-                        <a href='/home'>
+                        <Link to='/home'>
                             <Box component="img" src={PokemonLogo} height="3em" />
-                        </a>
+                        </Link>
                         <Box sx={{ display: 'flex', width: "100%" }}>
-                            <a href='/pokemons'>
+                            <Link to='/pokemons'>
                                 <button className='navbar navbar-btn' type="submit">Pokémons</button>
-                            </a>
-                            <a href='/minhaColecao'>
+                            </Link>
+                            <Link to='/minhaColecao'>
                                 <button className='navbar navbar-btn' type="submit">Minha Coleção</button>
-                            </a>
+                            </Link>
                         </Box>
                         {!esconderPesquisa && (
                             <Search onChange={(e) => pokemonFiltro(e.target.value)}>
@@ -132,7 +132,9 @@ export default function Navbar({ pokemonFiltro, esconderPesquisa }) {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Link to={setting === 'Perfil' ? '/perfil' : '/'}>
+                                        <Typography textAlign="center">{setting}</Typography>
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Menu>

@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import PokemonTable from "../components/PokemonTable";
+import "./CSS/PerfilPokemon.css"
 
 export const PerfilPokemon = ({ pokemonData }) => {
   const { name, sprites, moves } = pokemonData || {};
@@ -21,11 +22,15 @@ export const PerfilPokemon = ({ pokemonData }) => {
 
   return (
     <>
-      <Navbar hideSearch />
-      <Container maxWidth="md">
+    <div className="divi div-PerfilPokemon">
+      <Navbar esconderPesquisa />
+      <Container className="containerPerfil" maxWidth="md">
         <Paper elevation={3}>
-          <Box display="flex" flexDirection="column" alignItems="center" p={5}>
-            <Typography variant="h4">{name}</Typography>
+          <Box borderRadius="15" display="flex" flexDirection="column" alignItems="center" p={5}>
+            <Typography color="black"
+            fontFamily="'Chakra Petch', Courier, monospace"
+            fontWeight="700"
+            variant="h2">{name}</Typography>
             <Box
               display="flex"
               alignItems="center"
@@ -58,6 +63,7 @@ export const PerfilPokemon = ({ pokemonData }) => {
           </Box>
         </Paper>
       </Container>
+      </div>
     </>
   );
 };

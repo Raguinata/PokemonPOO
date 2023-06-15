@@ -16,11 +16,11 @@ export default function PokemonTable({ pokemonData }) {
             <Table aria-label="a dense table">
                 <TableBody>
                     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                        <TableCell>Height </TableCell>
+                        <TableCell>Altura </TableCell>
                         <TableCell>{height + "cm"}</TableCell>
                     </TableRow>
                     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                        <TableCell>Weight</TableCell>
+                        <TableCell>Peso </TableCell>
                         <TableCell>{weight + "g"}</TableCell>
                     </TableRow>
                     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
