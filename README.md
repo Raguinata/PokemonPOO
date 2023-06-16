@@ -7,8 +7,8 @@ No vercel, o backend não pode ser carregado então é só a parte estatica do F
 
 # Links
 
-### Vercel: 
-### Video:
+### Vercel: https://pokemonwebapppoo.vercel.app/
+### Video: https://www.youtube.com/watch?v=ooICAZ_7aO8
 ### PDF:
 
 ## Instalação e Execução
